@@ -6,6 +6,7 @@ const age = joi.number();
 const breed = joi.string();
 const weight = joi.number();
 const owner = joi.string();
+const picture = joi.string().uri();
 
 const createCatSchema = joi.object({
   name: name.required(),
@@ -13,6 +14,7 @@ const createCatSchema = joi.object({
   breed: breed.required(),
   weight: weight.optional(),
   owner: owner.optional(),
+  picture: picture.required(),
 });
 
 const updateCatSchema = joi.object({
@@ -21,6 +23,7 @@ const updateCatSchema = joi.object({
   breed: breed,
   weight: weight,
   owner: owner,
+  picture: picture,
 });
 
 const getCatSchema = joi.object({
